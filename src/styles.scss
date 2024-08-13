@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.body{
+    box-sizing: border-box;
+    font-family: "Public Sans", sans-serif;
+    font-optical-sizing: 15px;
+    font-weight: 400;
+ 
+  
+}
+::-webkit-scrollbar {
+    width: 2px;
+  }
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:  rgb(190, 189, 194);;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+ 
+    transition: opacity  3s ease-in-out;
+    background: #afa5a5;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    width: 0; /* Initially hide scrollbar */
+    background: transparent;
+  }

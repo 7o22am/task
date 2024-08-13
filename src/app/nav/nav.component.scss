@@ -1,0 +1,130 @@
+ 
+ .sec1{
+   width: 260px;
+   height: 100vh;
+   overflow: auto;  
+   line-height: 20.625px;
+   color: rgb(68, 64, 80);
+   flex-direction: column;
+   align-items: start;
+   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+ }
+  
+ .sec2{
+   width: 80px;
+   height: 100vh;
+   overflow: auto;  
+   line-height: 20.625px;
+   color: rgb(68, 64, 80);
+   flex-direction: column;
+   align-items: center;
+   
+   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
+ }
+
+ 
+ .header {
+    color: #444050;
+    font-size: 1.375rem;
+
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+    margin-top: 6px;
+    margin-inline-start: .75rem !important;
+    font-weight: 700 !important;
+    box-sizing: border-box;
+ }
+
+ .filter {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+ 
+ }
+
+ .img-svg {
+    line-height: 1;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+ }
+
+ .bg-sm-mean {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgb(68, 64, 80);
+    background-color: rgba(47, 43, 61, 0.08);
+    border-radius: 6px;
+
+    cursor: pointer;
+    line-height: 22.005px;
+ 
+    text-decoration-color: rgb(68, 64, 80);
+    margin: 0px 12px;
+    padding: 8px 6px 8px 12px;
+ }
+
+ .badge {
+    border-radius: 800px;
+    color: rgb(255, 255, 255);
+    font-size: 13.0005px;
+    font-weight: 500;
+    padding: 5.50571px 10.0104px;
+    text-align: center;
+ }
+
+ .arrow {
+    align-items: center;
+    font-size: 15px;
+    margin: 0px 12px;
+ 
+ }
+.bg-wt{
+background-color: white;
+}
+
+ .show-mean {
+ 
+    color: rgb(109, 107, 119);
+    margin: 5px 8px;
+    padding: 8px 12px 8px 14px;
+    border-radius: 6px;
+    align-items: center;
+
+ }
+
+ .menu-data {
+   font-size: 15px;
+   font-weight: 400;
+    color: rgb(68, 64, 80);
+    padding-left: 10px;
+ }
+
+ .show-mean:hover{
+   background-color:  rgba(47, 43, 61, 0.08);
+   transition: 0.3s;
+ 
+   
+}
+.menu-data-ico{
+   font-size: 12px;
+   font-weight: 700;
+   color: rgb(61, 27, 228);
+}
+ .textMuted{
+   color: rgb(172, 170, 177);
+   font-size: 13px;
+   font-weight: 400;
+ }
+
+ .selected-item{
+    background-color: rgba(115, 103, 240, 0.7);
+    box-shadow: 0px 2px 6px 0px rgba(115, 103, 240, .3);
+    color: #fff  ;
+    border-radius: 6px;
+    text-decoration-color: rgb(68, 64, 80);
+    margin: 5px 8px;
+  
+ }
+ .big-icon{
+   font-size: 30px;
+   text-align: center;
+   width: 20px;
+ }
