@@ -49,3 +49,16 @@ i{
     background-color: $light
      
 }
+
+@media only screen and (max-width: 600px) {
+    .br {
+     font-size: 10px;
+    }
+   .btn-sml{
+     font-size: 12px;
+   }
+   img{
+    width: 30px !important;
+    height: 30px !important;
+   }
+  }

@@ -3,7 +3,7 @@
 }
 
 @media (max-width: 800px) { /* High-resolution screens */
-    #nav {
-      
+    .scrolMe{
+        overflow: scroll;
     }
   }
