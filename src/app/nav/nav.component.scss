@@ -130,8 +130,4 @@ $mainColor:rgb(68, 64, 80);
    transition: opacity 0.3s ease-in-out;
  }
  
- @media (max-width: 800px) { /* Adjust the max-width as needed */
-  #navbar {
-    display: none; /* or any other style to indicate it's disabled */
-  }
-}
+ 
