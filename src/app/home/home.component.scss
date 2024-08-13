@@ -1,0 +1,49 @@
+$light : #e9ecef;
+$bg:rgba(102, 90, 236, 0.7);
+.stp-icon{
+    font-size: 15px;
+    margin: 0px 8px;
+   background-color: $light;
+    border-radius: 5px;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.stp-det{ 
+    margin: 0px 8px;
+    line-height: .1;
+    align-items: start;
+     font-size: 15px;
+    justify-content: flex-end;
+    p{
+        font-size: 10px;
+    }
+}
+.stp-det2{ 
+     
+    line-height: .1;
+    align-items: start;
+     font-size: 15px;
+    justify-content: flex-end;
+    p{
+        font-size: 10px;
+    }
+}
+.arrow{
+    margin: 0px 8px;
+    display: flex;
+    align-items: center;
+ 
+}
+.btn{
+    background-color: $bg;
+}
+
+
+.selected-item{
+    background-color: $bg;
+}
+.bgWhite{
+    border-radius: 5px;
+    background-color: white;
+}

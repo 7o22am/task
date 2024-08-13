@@ -2,4 +2,8 @@
     background-color: #fff;
 }
 
- 
+@media (max-width: 800px) { /* High-resolution screens */
+    #nav {
+      display: none; /* or any other style to indicate it's disabled */
+    }
+  }

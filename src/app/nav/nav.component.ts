@@ -1,4 +1,4 @@
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @Component({
@@ -6,14 +6,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
   animations: [
+    trigger('slideInOut', [
+      state('in', style({
+        width: '260px',
+        opacity: 1,
+        transform: 'translateX(0)'
+      })),
+      state('out', style({
+        width: '0px',
+        opacity: 0.5,
+        transform: 'translateX(-100%)'
+      })),
+      transition('in => out', animate('400ms ease-in-out')),
+      transition('out => in', animate('400ms ease-in-out'))
+    ]),
     trigger('fade', [
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('500ms', style({ opacity: 1 }))
-      ]),
-      transition(':leave', [
-        animate('500ms', style({ opacity: 0 }))
-      ])
+      state('visible', style({ opacity: 1 })),
+      state('hidden', style({ opacity: 0 })),
+      transition('visible <=> hidden', animate('300ms ease-in-out'))
     ])
   ]
 })
@@ -25,20 +35,27 @@ export class NavComponent {
   EcommerceCollapsed: Boolean = false;
   isPin: Boolean = true;
   fullMode: boolean = true;
+
   constructor() {
 
+  }
+  isfull(){
+    this.fullMode = !this.fullMode;
   }
   isPinOrNo() {
     this.isPin = !this.isPin;
     this.fullMode = !this.fullMode;
   }
-  onHover() {
-    this.isPin = true;
+
+
+  Hover() {
+    if(!this.fullMode)
+      this.isPin = !this.isPin;
   }
-  onLeave() {
-    if (!this.fullMode)
-      this.isPin = false;
-  }
+  HoverOut() {
+    if(!this.fullMode)
+    this.isPin = !this.isPin;
+}
   toggleEcommerceCollapsed() {
     this.EcommerceCollapsed = !this.EcommerceCollapsed;
 

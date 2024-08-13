@@ -6,18 +6,26 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { HeaderComponent } from './header/header.component';
+import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { ChartComponent } from './chart/chart.component';
+import { CanvasJSAngularChartsModule
 
+ } from '@canvasjs/angular-charts';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavComponent,
-    HeaderComponent
+    HeaderComponent,
+    SearchFilterComponent,
+    ChartComponent,
+   
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CanvasJSAngularChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
