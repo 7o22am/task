@@ -33,8 +33,8 @@ export class NavComponent {
   layoutCollapsed: Boolean = false;
   fontPageCollapsed: Boolean = false;
   EcommerceCollapsed: Boolean = false;
-  isPin: Boolean = true;
-  fullMode: boolean = true;
+  isPin: Boolean = false;
+  fullMode: boolean = false;
 
   constructor() {
 
