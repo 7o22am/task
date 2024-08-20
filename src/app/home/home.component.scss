@@ -53,3 +53,11 @@ $bg:rgba(102, 90, 236, 0.7);
  }
 
  
+ .no-border {
+    border: 1px solid rgba(47, 43, 61, .14);
+    outline: none;  
+  }
+  
+  .no-border:focus {
+    box-shadow: none;  
+  }

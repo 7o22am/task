@@ -1,42 +1,42 @@
 
 <div *ngIf="!isSearch" class="d-flex align-items-center search-cus ">
      
-      <div class="d-flex">
-        <span class="input-group-text bg-white border-0  ">
-            <div class="menu-dis " >
-                <i class="bi bi-list fs-4" (click)="display()"></i>
-                
-                
-            </div>
-           
-            <i class="bi bi-search"></i>
-        </span>
-        <button class="btn text-muted text-start btn-sml" (click)="isSearchOrNo(true)" > Search (Ctrl+/) </button>
-      </div>
-    
-  
-    <div class="ms-3 d-flex align-items-center left-icon">
-        <i class="bi bi-translate fs-15 br  "></i>
-        <i class="bi bi-brightness-high  fs-15  br"></i>
-        <i class="bi bi-grid-3x3-gap   fs-15 br"></i>
-        <div class="position-relative  ">
-            <i class="bi bi-bell fs-10 br"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-30">
-                5
-            </span>
-        </div>
-        <img src="../../assets/1.png" class="rounded-circle ms-3" style="width: 40px; height: 40px;" />
+    <div class="d-flex">
+      <span class="input-group-text bg-white border-0  ">
+          <div class="menu-dis " >
+              <i class="bi bi-list fs-4" (click)="display()"></i>
+              
+              
+          </div>
+         
+          <i class="bi bi-search"></i>
+      </span>
+      <button class="btn text-muted text-start btn-sml" (click)="isSearchOrNo(true)" > Search (Ctrl+/) </button>
     </div>
+  
+
+  <div class="ms-3 d-flex align-items-center left-icon">
+      <i class="bi bi-translate fs-15 br  "></i>
+      <i class="bi bi-brightness-high  fs-15  br"></i>
+      <i class="bi bi-grid-3x3-gap   fs-15 br"></i>
+      <div class="position-relative  ">
+          <i class="bi bi-bell fs-10 br"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-30">
+              5
+          </span>
+      </div>
+      <img src="../../assets/1.png" class="rounded-circle ms-3" style="width: 40px; height: 40px;" />
+  </div>
 </div>
 <div *ngIf="isSearch" class="d-flex align-items-center search-cus ">
-    
-    <div class="d-flex">
-     <input type="text"  class="p-2 no-border"  placeholder="Search..">
-    </div>
   
-  <div class="  d-flex align-items-center m-2">
-      
-      <i class="fa-solid fa-x br" (click)="isSearchOrNo(false)"></i> 
-      
+  <div class="d-flex">
+   <input type="text"  class="p-2 no-border"  placeholder="Search..">
   </div>
+
+<div class="  d-flex align-items-center m-2">
+    
+    <i class="fa-solid fa-x br" (click)="isSearchOrNo(false)"></i> 
+    
+</div>
 </div>
