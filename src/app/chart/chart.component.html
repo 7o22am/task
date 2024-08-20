@@ -1,22 +1,26 @@
-<div class="text-muted fs-5">
-    Carts/Apex
-</div>
+ 
 
-<div class="bg p-3">
+<div class="container mt-2 ">
+    <app-header></app-header>
     
-    <div class="rounded ">
-        <div>
-            <p>Last Updates</p>
-            <p class="text-muted">Commerical network</p>
-        </div>
-       <div class="mt-5 d-flex">
-        <i class="fa-solid fa-circle dot"></i>
-        <p>visits</p>
-        <i class="fa-solid fa-circle dot2"></i>
-        <p>Clicks</p>
-        <i class="fa-solid fa-circle dot3"></i>
-        <p>Sales</p>
-       </div>
-       <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>    
-    </div>      
+    <div class="d-flex flex-column d-flex card mt-3">
+            <div class="linsHight">
+                <p>Last Updates</p>
+                <p class="text-muted">Commerical network</p>
+            </div>
+            <div class="mt-5 d-flex align-items-center gap-1">
+              <i class="fa-solid fa-circle dot"></i>
+              <p class="mb-0">visits</p>
+              <i class="fa-solid fa-circle dot2"></i>
+              <p class="mb-0">Clicks</p>
+              <i class="fa-solid fa-circle dot3"></i>
+              <p class="mb-0">Sales</p>
+          </div>
+          
+          <div class=" ">
+            <canvasjs-chart  [options]="chartOptions"     [styles]="{width: '90%', height:'300px'}"></canvasjs-chart>    
+          </div>
+        </div>  
+      
+       
 </div>

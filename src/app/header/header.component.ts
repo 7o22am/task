@@ -10,12 +10,15 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
 
   isSearch: boolean = false;
-
+  menu:boolean=false;
   isSearchOrNo(s:boolean) {
     if(s)
       this.isSearch = true;
     else
     this.isSearch = false;
   }
-
+  display(){
+    this.menu=!this.menu;
+    alert("sadsa")
+  }
 }

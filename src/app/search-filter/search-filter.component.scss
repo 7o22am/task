@@ -4,14 +4,9 @@ $light : hsl(210, 16%, 93%);
 .btn{
     color: white;
     font-size: 15px;
-    background-color: $bg;
+    background-color:  #7367f0;
 }
 
-.filter{
-    background-color: white;
-    padding: 6px;
-    border-radius: 5px;
-}
 
 .user-div{
     line-height: .1;
@@ -61,6 +56,24 @@ i:hover{
 .table{
     font-size: 15px;
     font-weight: 400;
-     
     font-family: "Public Sans", sans-serif;
+    color:#444050;
+  .head{
+   
+     font-weight: 500;
+    color:#444050;
+    font-size: .8125rem;
+  }
 }
+
+
+.card{
+ 
+    background-clip: padding-box;
+    box-shadow: 0 .1875rem .75rem 0 rgba(47, 43, 61, .14);
+    border-color: #e6e6e8;
+    border-radius: 0.375rem;
+  
+    margin-top: 10px;
+    padding: 15px;
+ }

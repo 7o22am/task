@@ -1,224 +1,449 @@
-<div class="d-flex " >
-    <section [@slideInOut]="isPin ? 'in' : 'out'"  class="d-flex flex-column sec1">
-        <div  class="container-fluid p-0  mb-3 ">
+<div class="trna">
+    <div *ngIf="fullMode" class="d-flex trna">
+        <section id="about" class="d-flex flex-column sec2 content">
+            <div class="container-fluid p-0  mb-3  ">
     
-            <div class="  d-flex justify-content-between">
-                <div class="d-flex  p-3  align-item-center">
-                    <svg class="img-svg mt-2  " width="32px" height="22" viewBox="0 0 32 22" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
-                            fill="#7367F0"></path>
-                        <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z" fill="#161616"></path>
-                        <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z" fill="#161616"></path>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
-                            fill="#7367F0"></path>
-                    </svg>
-                    <span class=" header">Vuexy</span>
+                <div class="d-flex justify-content-between ms-2">
+                    <div class="d-flex  p-3   align-item-center">
+                        <svg class="img-svg mt-2  " width="32px" height="22" viewBox="0 0 32 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
+                                fill="#7367F0"></path>
+                            <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z" fill="#161616"></path>
+                            <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z" fill="#161616"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
+                                fill="#7367F0"></path>
+                        </svg>
+                        <span class=" header">Vuexy</span>
+                    </div>
+                    <div class="d-flex p-4 justify-content-end">
+                        <i [ngClass]="[!fullMode ? 'd-flex' : 'd-none']" class="fa-regular fa-circle "
+                            (click)="isfull()"></i>
+                        <i [ngClass]="[fullMode ? 'd-flex' : 'd-none']" class="fa-regular fa-circle-dot"
+                            (click)="isfull()"></i>
+                    </div>
                 </div>
-                <div class="d-flex p-4 justify-content-end">
-                    <i [ngClass]="[!fullMode ? 'd-flex' : 'd-none']" class="fa-regular fa-circle " (click)="isfull()"></i>
-                    <i  [ngClass]="[fullMode ? 'd-flex' : 'd-none']" class="fa-regular fa-circle-dot" (click)="isPinOrNo()"></i>
-                </div>
+    
             </div>
-        
-        </div>
-        
-        <div  class="container-fluid m-0 p-0 filter">
-            <div class="d-flex flex-column  ">
-                <div [ngClass]="[!dashbordCollapsed ? 'bg-wt' : '']" class="d-flex  justify-content-between bg-sm-mean"
-                    (click)="toggleDashCollapsed()">
-                    <div>
-                        <i class="bi bi-house-door"></i>
-                        Dashboards
+    
+            <div class="container-fluid m-0 p-0 ">
+                <div class="d-flex flex-column  ">
+                    <div id="flip" (click)="togglePanel('panel')" class="d-flex cust-bg   bg-sm-mean"
+                        (click)="toggleDashCollapsed()">
+                       
+                            <i class="bi bi-house-door icons"></i>
+                  
+                        <div class="hidden">
+                            Dashboards
+                        </div>
+                        <div class="hidden bk">
+                            <span class="badge bg-danger rounded-pill ms-auto">5</span>
+                            <i *ngIf="dashbordCollapsed" class="fa-solid fa-angle-down arrow "></i>
+                            <i *ngIf="!dashbordCollapsed" class="fa-solid fa-chevron-right  arrow"></i>
+    
+                        </div>
+    
+    
                     </div>
-                    <div class="">
-                        <span class="badge bg-danger rounded-pill ms-auto">5</span>
-                        <i [ngClass]="[dashbordCollapsed ? 'block' : 'd-none']" class="fa-solid fa-angle-down arrow "></i>
-                        <i [ngClass]="[!dashbordCollapsed ? 'block' : 'd-none']" class="fa-solid fa-chevron-right  arrow"></i>
+                    <div #panel id="panel">
+                        <ul class="nav flex-column">
+                            <li class="selected-item"><a href="home" class="nav-link    "><i
+                                        class="bi bi-circle menu-data-ico"></i> <span class="menu-data">
+                                        EnterData(task1,2,3)</span></a></li>
+                            <li><a href="chart" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i>
+                                    <span class="menu-data">Chart(task4)</span></a></li>
+                            <li><a href="data" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">UserData(task5)</span></a></li>
+                            <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Logistics</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Academy</span></a></li>
+                        </ul>
+    
                     </div>
-        
-        
-        
-                </div>
-                <ul class="nav flex-column  " [ngClass]="[dashbordCollapsed ? 'd-flex' : 'd-none']">
-                    <li class="selected-item"><a href="home" class="nav-link    "><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data"> EnterData(task1,2,3)</span></a></li>
-                    <li><a href="chart" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Chart(task4)</span></a></li>
-                    <li><a href="data" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">UserData(task5)</span></a></li>
-                    <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Logistics</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Academy</span></a></li>
-                </ul>
-        
-        
-        
-        
-        
-                <div [ngClass]="[!layoutCollapsed ? 'bg-wt' : '']" class="d-flex  justify-content-between bg-sm-mean  "
-                    (click)="toggleLayoutCollapsed()">
-                    <div class="">
-                        <i class="bi bi-columns"></i>
+    
+    
+    
+    
+    
+                    <div [ngClass]="layoutCollapsed   ? 'cust-bg' : ''" id="flip2" (click)="togglePanel('panel2')"
+                        class="d-flex  justify-content-between bg-sm-mean  " (click)="toggleLayoutCollapsed()">
+                        <div class="">
+                            <i class="bi bi-columns icons  "></i>
+    
+                        </div>
+                        <div class="hidden">
+                            Layouts
+                        </div>
+                        <div class="hidden bk2">
+                            <i *ngIf="layoutCollapsed" class="fa-solid fa-angle-down arrow "></i>
+                            <i *ngIf="!layoutCollapsed" class="fa-solid fa-chevron-right  arrow"></i>
+                        </div>
+                    </div>
+                    <div #panel2 id="panel2">
+                        <ul class="nav flex-column">
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data"> Content menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content navbar</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content nav + Slidebar</span></a></li>
+                            <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Horizantil</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Without menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Blank</span></a></li>
+                        </ul>
+                    </div>
+    
+    
+    
+    
+                    <div [ngClass]="fontPageCollapsed   ? 'cust-bg' : ''" id="flip3" (click)="togglePanel('panel3')"
+                        class="d-flex  justify-content-between bg-sm-mean " (click)="toggleFontollapsed()">
+                        <i class="bi bi-file-earmark icons "></i>
+                        <div class="hidden">
+    
+                            Front Pages
+                        </div>
+                        <div class="hidden bk3">
+    
+                            <i *ngIf="fontPageCollapsed" class="fa-solid fa-angle-down arrow "></i>
+                            <i *ngIf="!fontPageCollapsed" class="fa-solid fa-chevron-right  arrow"></i>
+                        </div>
+                    </div>
+                    <div #panel3 id="panel3">
+                        <ul class="nav flex-column  ">
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data"> Content menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content navbar</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content nav + Slidebar</span></a></li>
+                            <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Horizantil</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Without menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Blank</span></a></li>
+                        </ul>
+                    </div>
+    
+    
+    
+                    <div class="d-flex  ">
+                        <span class="textMuted m-3  hidden"> APPS & PAGES</span>
+                    </div>
+                    <div class="hidden">
+                        <ul class="nav flex-column ">
+                            <li class="hidden"><a href="#" class="nav-link  show-mean">
+                                <i class="fa-regular fa-envelope icons ms-2"></i>
+                                    <span class="menu-data ">Email</span></a>
+                            </li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean  "><i
+                                        class="fa-regular fa-calendar icons ms-2"></i><span class="menu-data">
+                                        Calender   </span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i
+                                        class="fa-solid fa-cannabis icons  ms-2"></i> <span class="menu-data">
+                                        Kanbansa  </span></a></li>
+    
+                            <li class="hidden"><a href="#" class="nav-link  show-mean"><i
+                                        class="fa-solid fa-cart-shopping icons  ms-2"></i> <span class="menu-data">
+                                        eCommerce  </span></a></li>
+    
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i
+                                        class="fa-brands fa-readme icons ms-2"></i> <span class="menu-data">
+                                        Academy  </span></a></li>
+                            
+                        </ul>
+                    </div>
+    
+    
+                    <div [ngClass]="[!EcommerceCollapsed ? 'bg-wt' : '']" id="flip4" (click)="togglePanel('panel4')"
+                    class=" d-flex  justify-content-between bg-sm-mean  " (click)="toggleEcommerceCollapsed()">
+                    <i class="bi bi-columns icons ms-2"></i>
+                    <div class="hidden">
                         Layouts
                     </div>
-                    <div class="">
-                        <i [ngClass]="[layoutCollapsed ? 'd-flex' : 'd-none']" class="fa-solid fa-angle-down arrow "></i>
-                        <i [ngClass]="[!layoutCollapsed ? 'd-flex' : 'd-none']" class="fa-solid fa-chevron-right  arrow"></i>
-                    </div>
-                </div>
-                <ul class="nav flex-column" [ngClass]="[layoutCollapsed ? 'd-flex' : 'd-none']">
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data"> Content menu</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Content navbar</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Content nav + Slidebar</span></a></li>
-                    <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Horizantil</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Without menu</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Blank</span></a></li>
-                </ul>
-        
-        
-        
-        
-                <div [ngClass]="[!fontPageCollapsed ? 'bg-wt' : '']" class="d-flex  justify-content-between bg-sm-mean "
-                    (click)="toggleFontollapsed()">
-                    <div class="">
-                        <i class="bi bi-file-earmark"></i>
-                        Front Pages
-                    </div>
-                    <div class="">
-        
-                        <i [ngClass]="[fontPageCollapsed ? 'd-flex' : 'd-none']" class="fa-solid fa-angle-down arrow "></i>
-                        <i [ngClass]="[!fontPageCollapsed ? 'd-flex' : 'd-none']" class="fa-solid fa-chevron-right  arrow"></i>
-                    </div>
-                </div>
-                <ul class="nav flex-column  " [ngClass]="[fontPageCollapsed ? 'd-flex' : 'd-none']">
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data"> Content menu</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Content navbar</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Content nav + Slidebar</span></a></li>
-                    <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Horizantil</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Without menu</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
-                                class="menu-data">Blank</span></a></li>
-                </ul>
-        
-        
-                <div class="d-flex">
-                    <span class="textMuted m-3">APPS & PAGES</span>
-                </div>
-                <div>
-                    <ul class="nav flex-column">
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-envelope"></i> <span
-                                    class="menu-data"> Email</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-calendar"></i><span
-                                    class="menu-data">Calender</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-solid fa-cannabis"></i> <span
-                                    class="menu-data">Kanban</span></a></li>
-                        <li><a href="#" class="nav-link  show-mean"><i class="fa-solid fa-cart-shopping"></i> <span
-                                    class="menu-data">eCommerce</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-brands fa-readme"></i> <span
-                                    class="menu-data">Academy</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-file-lines"></i> <span
-                                    class="menu-data">Invoice </span></a></li>
-                    </ul>
-                </div>
-        
-        
-                <div [ngClass]="[!EcommerceCollapsed ? 'bg-wt' : '']" class="d-flex  justify-content-between bg-sm-mean  "
-                    (click)="toggleEcommerceCollapsed()">
-                    <div class="">
-                        <i class="bi bi-columns"></i>
-                        Layouts
-                    </div>
-                    <div class="">
-                        <i [ngClass]="[EcommerceCollapsed ? 'd-flex' : 'd-none']" class="fa-solid fa-angle-down arrow "></i>
+                    <div class="bk4">
                         <i [ngClass]="[!EcommerceCollapsed ? 'd-flex' : 'd-none']"
+                            class="fa-solid fa-angle-down arrow "></i>
+                        <i [ngClass]="[EcommerceCollapsed ? 'd-flex' : 'd-none']"
                             class="fa-solid  fa-chevron-right  arrow"></i>
                     </div>
                 </div>
-                <ul class="nav flex-column" [ngClass]="[EcommerceCollapsed ? 'd-flex' : 'd-none']">
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+             <div #panel4 id="panel4">
+                <ul class="nav flex-column"  >
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
                                 class="menu-data"> Content menu</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
                                 class="menu-data">Content navbar</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
                                 class="menu-data">Content nav + Slidebar</span></a></li>
-                    <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                    <li  class="hidden"><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
                                 class="menu-data">Horizantil</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
                                 class="menu-data">Without menu</span></a></li>
-                    <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
                                 class="menu-data">Blank</span></a></li>
                 </ul>
-        
-        
-        
-                <div class="d-flex">
-                    <span class="textMuted m-3">CHARTER & MAPS</span>
+             </div>
+    
+    
+    
+                    <div class="d-flex">
+                        <span class="textMuted m-3 hidden">CHARTER & MAPS</span>
+                    </div>
+                    <div>
+                        <ul class="nav flex-column">
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-envelope icons  ms-2"></i> <span
+                                        class="menu-data"> Email</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-calendar icons  ms-2"></i><span
+                                        class="menu-data"> Calender</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-solid fa-cannabis icons  ms-2"></i> <span
+                                        class="menu-data"> Kanban</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link  show-mean"><i class="fa-solid fa-cart-shopping icons  ms-2"></i> <span
+                                        class="menu-data"> eCommerce</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-brands fa-readme icons  ms-2"></i> <span
+                                        class="menu-data"> Academy</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link    show-mean"><i class="fa-regular fa-file-lines icons  ms-2"></i> <span
+                                        class="menu-data"> Invoice </span></a></li>
+                        </ul>
+                    </div>
+    
                 </div>
-                <div>
-                    <ul class="nav flex-column">
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-envelope"></i> <span
-                                    class="menu-data"> Email</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-calendar"></i><span
-                                    class="menu-data">Calender</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-solid fa-cannabis"></i> <span
-                                    class="menu-data">Kanban</span></a></li>
-                        <li><a href="#" class="nav-link  show-mean"><i class="fa-solid fa-cart-shopping"></i> <span
-                                    class="menu-data">eCommerce</span></a></li>
-                        <li><a href="#" class="nav-link   show-mean"><i class="fa-brands fa-readme"></i> <span
-                                    class="menu-data">Academy</span></a></li>
-                        <li><a href="#" class="nav-link    show-mean"><i class="fa-regular fa-file-lines"></i> <span
-                                    class="menu-data">Invoice </span></a></li>
-                    </ul>
-                </div>
-        
             </div>
-        </div>
-    </section>
+        </section>
+    
+    </div>
     
     
-    <section [@fade]="!isPin ? 'visible' : 'hidden'" (mouseenter)="Hover()"   ((mouseleave))="HoverOut()"  class="d-flex flex-column  align-item-center sec2 ">
     
-        <svg class="img-svg mt-3 ps-1  " width="32px" height="22" viewBox="0 0 32 22" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
-        <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
-            fill="#7367F0"></path>
-        <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
-            d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z" fill="#161616"></path>
-        <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
-            d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z" fill="#161616"></path>
-        <path fill-rule="evenodd" clip-rule="evenodd"
-            d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
-            fill="#7367F0"></path>
-    </svg>
-     <div class="mt-4 d-flex flex-column">
-        <i   class="bi bi-house-door big-icon m-2"></i>
-     <i   class="fa-regular fa-envelope big-icon  m-2"></i>
-     <i   class="fa-regular fa-calendar big-icon  m-2"></i>
-     <hr>
-     <i class="fa-solid fa-cart-shopping big-icon  m-2"></i>
-     <i   class="fa-brands fa-readme big-icon  m-2"></i>
-     <hr>
-     <i  class="fa-regular fa-file-lines big-icon  m-2 ps-1"></i>
-     </div>
-    </section>
+    <div *ngIf="!fullMode" id="mySidenav" class="sidenav trna">
+        <section id="about" class="d-flex flex-column sec2 content">
+            <div class="container-fluid p-0  mb-3  ">
     
-    <section [@fade]="'visible'" class="sec3 " ></section>
-</div>
+                <div class="d-flex justify-content-between ms-2">
+                    <div class="d-flex  p-3   align-item-center">
+                        <svg class="img-svg mt-2  " width="32px" height="22" viewBox="0 0 32 22" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M0.00172773 0V6.85398C0.00172773 6.85398 -0.133178 9.01207 1.98092 10.8388L13.6912 21.9964L19.7809 21.9181L18.8042 9.88248L16.4951 7.17289L9.23799 0H0.00172773Z"
+                                fill="#7367F0"></path>
+                            <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.69824 16.4364L12.5199 3.23696L16.5541 7.25596L7.69824 16.4364Z" fill="#161616"></path>
+                            <path opacity="0.06" fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.07751 15.9175L13.9419 4.63989L16.5849 7.28475L8.07751 15.9175Z" fill="#161616"></path>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M7.77295 16.3566L23.6563 0H32V6.88383C32 6.88383 31.8262 9.17836 30.6591 10.4057L19.7824 22H13.6938L7.77295 16.3566Z"
+                                fill="#7367F0"></path>
+                        </svg>
+                        <span class=" header">Vuexy</span>
+                    </div>
+                    <div class="d-flex p-4 justify-content-end">
+                        <i [ngClass]="[!fullMode ? 'd-flex' : 'd-none']" class="fa-regular fa-circle "
+                            (click)="isfull()"></i>
+                        <i [ngClass]="[fullMode ? 'd-flex' : 'd-none']" class="fa-regular fa-circle-dot"
+                            (click)="isfull()"></i>
+                    </div>
+                </div>
+    
+            </div>
+    
+            <div class="container-fluid m-0 p-0 ">
+                <div class="d-flex flex-column  ">
+                    <div id="flip" (click)="togglePanel('panel')" class="d-flex cust-bg   bg-sm-mean"
+                        (click)="toggleDashCollapsed()">
+                       
+                            <i class="bi bi-house-door icons"></i>
+                  
+                        <div class="hidden">
+                            Dashboards
+                        </div>
+                        <div class="hidden bk">
+                            <span class="badge bg-danger rounded-pill ms-auto">5</span>
+                            <i *ngIf="dashbordCollapsed" class="fa-solid fa-angle-down arrow "></i>
+                            <i *ngIf="!dashbordCollapsed" class="fa-solid fa-chevron-right  arrow"></i>
+    
+                        </div>
+    
+    
+                    </div>
+                    <div #panel id="panel">
+                        <ul class="nav flex-column">
+                            <li class="selected-item"><a href="home" class="nav-link    "><i
+                                        class="bi bi-circle menu-data-ico"></i> <span class="menu-data">
+                                        EnterData(task1,2,3)</span></a></li>
+                            <li><a href="chart" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i>
+                                    <span class="menu-data">Chart(task4)</span></a></li>
+                            <li><a href="data" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">UserData(task5)</span></a></li>
+                            <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Logistics</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Academy</span></a></li>
+                        </ul>
+    
+                    </div>
+    
+    
+    
+    
+    
+                    <div [ngClass]="layoutCollapsed   ? 'cust-bg' : ''" id="flip2" (click)="togglePanel('panel2')"
+                        class="d-flex  justify-content-between bg-sm-mean  " (click)="toggleLayoutCollapsed()">
+                        <div class="">
+                            <i class="bi bi-columns icons  "></i>
+    
+                        </div>
+                        <div class="hidden">
+                            Layouts
+                        </div>
+                        <div class="hidden bk2">
+                            <i *ngIf="layoutCollapsed" class="fa-solid fa-angle-down arrow "></i>
+                            <i *ngIf="!layoutCollapsed" class="fa-solid fa-chevron-right  arrow"></i>
+                        </div>
+                    </div>
+                    <div #panel2 id="panel2">
+                        <ul class="nav flex-column">
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data"> Content menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content navbar</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content nav + Slidebar</span></a></li>
+                            <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Horizantil</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Without menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Blank</span></a></li>
+                        </ul>
+                    </div>
+    
+    
+    
+    
+                    <div [ngClass]="fontPageCollapsed   ? 'cust-bg' : ''" id="flip3" (click)="togglePanel('panel3')"
+                        class="d-flex  justify-content-between bg-sm-mean " (click)="toggleFontollapsed()">
+                        <i class="bi bi-file-earmark icons "></i>
+                        <div class="hidden">
+    
+                            Front Pages
+                        </div>
+                        <div class="hidden bk3">
+    
+                            <i *ngIf="fontPageCollapsed" class="fa-solid fa-angle-down arrow "></i>
+                            <i *ngIf="!fontPageCollapsed" class="fa-solid fa-chevron-right  arrow"></i>
+                        </div>
+                    </div>
+                    <div #panel3 id="panel3">
+                        <ul class="nav flex-column  ">
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data"> Content menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content navbar</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Content nav + Slidebar</span></a></li>
+                            <li><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Horizantil</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Without menu</span></a></li>
+                            <li><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico"></i> <span
+                                        class="menu-data">Blank</span></a></li>
+                        </ul>
+                    </div>
+    
+    
+    
+                    <div class="d-flex  ">
+                        <span class="textMuted m-3  hidden"> APPS & PAGES</span>
+                    </div>
+                    <div class="hidden">
+                        <ul class="nav flex-column ">
+                            <li class="hidden"><a href="#" class="nav-link  show-mean">
+                                <i class="fa-regular fa-envelope icons ms-2"></i>
+                                    <span class="menu-data ">Email</span></a>
+                            </li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean  "><i
+                                        class="fa-regular fa-calendar icons ms-2"></i><span class="menu-data">
+                                        Calender   </span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i
+                                        class="fa-solid fa-cannabis icons  ms-2"></i> <span class="menu-data">
+                                        Kanbansa  </span></a></li>
+    
+                            <li class="hidden"><a href="#" class="nav-link  show-mean"><i
+                                        class="fa-solid fa-cart-shopping icons  ms-2"></i> <span class="menu-data">
+                                        eCommerce  </span></a></li>
+    
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i
+                                        class="fa-brands fa-readme icons ms-2"></i> <span class="menu-data">
+                                        Academy  </span></a></li>
+                            
+                        </ul>
+                    </div>
+    
+    
+                    <div [ngClass]="[!EcommerceCollapsed ? 'bg-wt' : '']" id="flip4" (click)="togglePanel('panel4')"
+                    class=" d-flex  justify-content-between bg-sm-mean  " (click)="toggleEcommerceCollapsed()">
+                    <i class="bi bi-columns icons ms-2"></i>
+                    <div class="hidden">
+                        Layouts
+                    </div>
+                    <div class="bk4">
+                        <i [ngClass]="[!EcommerceCollapsed ? 'd-flex' : 'd-none']"
+                            class="fa-solid fa-angle-down arrow "></i>
+                        <i [ngClass]="[EcommerceCollapsed ? 'd-flex' : 'd-none']"
+                            class="fa-solid  fa-chevron-right  arrow"></i>
+                    </div>
+                </div>
+             <div #panel4 id="panel4">
+                <ul class="nav flex-column"  >
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
+                                class="menu-data"> Content menu</span></a></li>
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
+                                class="menu-data">Content navbar</span></a></li>
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
+                                class="menu-data">Content nav + Slidebar</span></a></li>
+                    <li  class="hidden"><a href="#" class="nav-link  show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
+                                class="menu-data">Horizantil</span></a></li>
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
+                                class="menu-data">Without menu</span></a></li>
+                    <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="bi bi-circle menu-data-ico  icons  ms-2"></i> <span
+                                class="menu-data">Blank</span></a></li>
+                </ul>
+             </div>
+    
+    
+    
+                    <div class="d-flex">
+                        <span class="textMuted m-3 hidden">CHARTER & MAPS</span>
+                    </div>
+                    <div>
+                        <ul class="nav flex-column">
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-envelope icons  ms-2"></i> <span
+                                        class="menu-data"> Email</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-regular fa-calendar icons  ms-2"></i><span
+                                        class="menu-data"> Calender</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-solid fa-cannabis icons  ms-2"></i> <span
+                                        class="menu-data"> Kanban</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link  show-mean"><i class="fa-solid fa-cart-shopping icons  ms-2"></i> <span
+                                        class="menu-data"> eCommerce</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link   show-mean"><i class="fa-brands fa-readme icons  ms-2"></i> <span
+                                        class="menu-data"> Academy</span></a></li>
+                            <li class="hidden"><a href="#" class="nav-link    show-mean"><i class="fa-regular fa-file-lines icons  ms-2"></i> <span
+                                        class="menu-data"> Invoice </span></a></li>
+                        </ul>
+                    </div>
+    
+                </div>
+            </div>
+        </section>
+    
+    </div>
+</div> 

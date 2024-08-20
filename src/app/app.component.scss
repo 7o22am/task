@@ -1,9 +1,13 @@
-.mean-color {
-    background-color: #fff;
+ .nav{
+    padding: 1000px;
+ }
+.nav-2{
+   
+   padding-left: 20px ;
+   padding-top: 10px;
 }
+ 
+.asd{
 
-@media (max-width: 800px) { /* High-resolution screens */
-    .scrolMe{
-        overflow: scroll;
-    }
-  }
+   transition: width 2s;
+}

@@ -1,161 +1,164 @@
- <div class="container filter "  style="overflow: hidden;">
-    <div class="row">
-        <h6>Search Filter</h6>
+ <div class="container filter"  style="overflow: hidden;">
+  <app-header></app-header>
+   <div class="card">
+    <div class="row mt-5 ">
+      <h6>Search Filter</h6>
 
-        <div class="col-xl-4">
-            <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Select Role</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-        </div>
-        <div class="col-xl-4">
-            <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Select Plan</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-        </div>
+      <div class="col-xl-4">
+          <div class="input-group mb-3">
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Select Role</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+      </div>
+      <div class="col-xl-4">
+          <div class="input-group mb-3">
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Select Plan</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+      </div>
 
-        <div class="col-xl-4">
-            <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Select Stata</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
-              </div>
-        </div>
-    
-    </div>
-    <hr class="">
-    <div class="row ">
-        <div class="col-xl-1">
-            <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
-               
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
-              </div>
-        </div>
-        <div class="col-xl-2 offset-xl-5">
-            <div class="input-group mb-3">
-                <input type="text" placeholder="Search..." class="form-control">
-              </div>
-        </div>
+      <div class="col-xl-4">
+          <div class="input-group mb-3">
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Select Stata</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+      </div>
+  
+  </div>
+  <hr class="">
+  <div class="row ">
+      <div class="col-xl-1">
+          <div class="input-group mb-3">
+              <select class="form-select" id="inputGroupSelect01">
+             
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </div>
+      </div>
+      <div class="col-xl-2 offset-xl-5">
+          <div class="input-group mb-3">
+              <input type="text" placeholder="Search..." class="form-control">
+            </div>
+      </div>
 
-        <div class="col-xl-2">
-            <div class="input-group mb-3">
-                <select class="form-select" id="inputGroupSelect01">
-                  <option selected>Export</option>
-                  <option value="1">One</option>
-                  <option value="2">Two</option>
-                  <option value="3">Three</option>
-                </select>
+      <div class="col-xl-2">
+          <div class="input-group mb-3">
+              <select class="form-select" id="inputGroupSelect01">
+                <option selected>Export</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+      </div>
+      <div class="col-xl-2">
+           <button type="button" class="btn"> + Add New User</button>
+      </div>       
+  </div>
+  <hr class="">
+  <table class="table ">
+      <thead>
+        <tr >
+          <th scope="col" class="head">USER</th>
+          <th scope="col" class="head">ROLE</th>
+          <th scope="col" class="head">PLAN</th>
+          <th scope="col" class="head">BJLLING</th>
+          <th scope="col"  class="text-center head">STATUS</th>
+          <th scope="col" class="text-center head">ACTION</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><div class="d-flex justify-content-start user-div">
+              <img src="../../assets/1.png" class="rounded-circle " style="width: 40px; height: 40px;" />
+              <div class="ms-2">
+                  <h6>zasnkod</h6>
+                  <p class="text-muted">zasnkod.gmail.com</p>
               </div>
-        </div>
-        <div class="col-xl-2">
-             <button type="button" class="btn"> + Add New User</button>
-        </div>       
-    </div>
-    <hr class="">
-    <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">USER</th>
-            <th scope="col">ROLE</th>
-            <th scope="col">PLAN</th>
-            <th scope="col">BJLLING</th>
-            <th scope="col">STATUS</th>
-            <th scope="col">ACTION</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"><div class="d-flex justify-content-start user-div">
-                <img src="../../assets/1.png" class="rounded-circle " style="width: 40px; height: 40px;" />
-                <div class="ms-2">
-                    <h6>zasnkod</h6>
-                    <p class="text-muted">zasnkod.gmail.com</p>
-                </div>
-              
-            </div></th>
-            <td  class="align-middle">
-                <div class="d-flex align-items-end justify-content-start">
-                    <div class="d-flex align-items-center   role-div h-100">
-                        <i class="fa-regular fa-clock icon"></i>
-                 <div class="ms-2">zasnkod</div>
-                    </div>
-                </div></td>
-            <td class="align-middle">Enterprise</td>
-            <td class="align-middle">Auto Debit</td>
-            <td class="align-middle "> <div class="active">Active</div> </td>
-            <td class="align-middle"><div class="d-flex justify-content-center">
-                <i class="fa-solid fa-trash p-2"></i>
-                <i class="fa-regular fa-eye p-2"></i>
-                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-            </div></td>
-          </tr>
-          <tr>
-            <th scope="row"><div class="d-flex justify-content-start user-div">
-                <img src="../../assets/1.png" class="rounded-circle " style="width: 40px; height: 40px;" />
-                <div class="ms-2">
-                    <h6>zasnkod</h6>
-                    <p class="text-muted">zasnkod.gmail.com</p>
-                </div>
-              
-            </div></th>
-            <td  class="align-middle">
-                <div class="d-flex align-items-end justify-content-start">
-                    <div class="d-flex align-items-center   role-div h-100">
-                        <i class="fa-regular fa-clock icon"></i>
-                 <div class="ms-2">zasnkod</div>
-                    </div>
-                </div></td>
-            <td class="align-middle">Enterprise</td>
-            <td class="align-middle">Auto Debit</td>
-            <td class="align-middle "> <div class="inactive">Inactive</div> </td>
-            <td class="align-middle"><div class="d-flex justify-content-center">
-                <i class="fa-solid fa-trash p-2"></i>
-                <i class="fa-regular fa-eye p-2"></i>
-                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-            </div></td>
-          </tr><tr>
-            <th scope="row"><div class="d-flex justify-content-start user-div">
-                <img src="../../assets/1.png" class="rounded-circle " style="width: 40px; height: 40px;" />
-                <div class="ms-2">
-                    <h6>zasnkod</h6>
-                    <p class="text-muted">zasnkod.gmail.com</p>
-                </div>
-              
-            </div></th>
-            <td  class="align-middle">
-                <div class="d-flex align-items-end justify-content-start">
-                    <div class="d-flex align-items-center   role-div h-100">
-                        <i class="fa-regular fa-clock icon"></i>
-                 <div class="ms-2">zasnkod</div>
-                    </div>
-                </div></td>
-            <td class="align-middle">Enterprise</td>
-            <td class="align-middle">Auto Debit</td>
-            <td class="align-middle "> <div class="active">Active</div> </td>
-            <td class="align-middle "><div class="d-flex justify-content-center">
-                <i class="fa-solid fa-trash p-2"></i>
-                <i class="fa-regular fa-eye p-2"></i>
-                <i class="fa-solid fa-ellipsis-vertical p-2"></i>
-            </div></td>
-          </tr>
-        </tbody>
-      </table>
+            
+          </div></th>
+          <td  class="align-middle">
+              <div class="d-flex align-items-end justify-content-start">
+                  <div class="d-flex align-items-center   role-div h-100">
+                      <i class="fa-regular fa-clock icon"></i>
+               <div class="ms-2">zasnkod</div>
+                  </div>
+              </div></td>
+          <td class="align-middle">Enterprise</td>
+          <td class="align-middle">Auto Debit</td>
+          <td class="align-middle "> <div class="active">Active</div> </td>
+          <td class="align-middle"><div class="d-flex justify-content-center">
+              <i class="fa-solid fa-trash p-2"></i>
+              <i class="fa-regular fa-eye p-2"></i>
+              <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+          </div></td>
+        </tr>
+        <tr>
+          <th scope="row"><div class="d-flex justify-content-start user-div">
+              <img src="../../assets/1.png" class="rounded-circle " style="width: 40px; height: 40px;" />
+              <div class="ms-2">
+                  <h6>zasnkod</h6>
+                  <p class="text-muted">zasnkod.gmail.com</p>
+              </div>
+            
+          </div></th>
+          <td  class="align-middle">
+              <div class="d-flex align-items-end justify-content-start">
+                  <div class="d-flex align-items-center   role-div h-100">
+                      <i class="fa-regular fa-clock icon"></i>
+               <div class="ms-2">zasnkod</div>
+                  </div>
+              </div></td>
+          <td class="align-middle">Enterprise</td>
+          <td class="align-middle">Auto Debit</td>
+          <td class="align-middle "> <div class="inactive">Inactive</div> </td>
+          <td class="align-middle"><div class="d-flex justify-content-center">
+              <i class="fa-solid fa-trash p-2"></i>
+              <i class="fa-regular fa-eye p-2"></i>
+              <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+          </div></td>
+        </tr><tr>
+          <th scope="row"><div class="d-flex justify-content-start user-div">
+              <img src="../../assets/1.png" class="rounded-circle " style="width: 40px; height: 40px;" />
+              <div class="ms-2">
+                  <h6>zasnkod</h6>
+                  <p class="text-muted">zasnkod.gmail.com</p>
+              </div>
+            
+          </div></th>
+          <td  class="align-middle">
+              <div class="d-flex align-items-end justify-content-start">
+                  <div class="d-flex align-items-center   role-div h-100">
+                      <i class="fa-regular fa-clock icon"></i>
+               <div class="ms-2">zasnkod</div>
+                  </div>
+              </div></td>
+          <td class="align-middle">Enterprise</td>
+          <td class="align-middle">Auto Debit</td>
+          <td class="align-middle "> <div class="active">Active</div> </td>
+          <td class="align-middle "><div class="d-flex justify-content-center">
+              <i class="fa-solid fa-trash p-2"></i>
+              <i class="fa-regular fa-eye p-2"></i>
+              <i class="fa-solid fa-ellipsis-vertical p-2"></i>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
 
+   </div>
 
  </div>

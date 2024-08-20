@@ -1,28 +1,31 @@
 $mainColor:rgb(68, 64, 80);
 .sec1 {
-   width: 260px;
-   height: 100vh;
-   overflow: auto;
-   line-height: 20.625px;
-   color: $mainColor;
-   flex-direction: column;
-   align-items: start;
-   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
-   transition: width 0.3s ease-in-out;
+  font-size: 15px;
+  height: 100vh;
+  overflow: auto;
+  line-height: 20.625px;
+  color: $mainColor;
+  flex-direction: column;
+  align-items: start;
+  box-shadow: 0 .1875rem .75rem 0 rgba(47, 43, 61, .14);
+  transition: width 0.3s ease-in-out;
+  overflow-x: hidden;
+  width: 260px;
+ 
  }
  
  .sec2 {
-
-   align-items: center;
-   justify-content: start;
-   width: 80px;
-   height: 100vh;
-   overflow: auto;
-   line-height: 20.625px;
-   color: $mainColor;
-   flex-direction: column;
-   box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.3);
-   transition: opacity 0.3s ease-in-out;
+  font-size: 15px;
+  height: 100vh;
+  overflow: auto;
+  line-height: 20.625px;
+  color: $mainColor;
+  flex-direction: column;
+  align-items: start;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  transition: width 0.3s ease-in-out;
+  overflow-x: hidden;
+ 
  }
  
  .header {
@@ -36,9 +39,7 @@ $mainColor:rgb(68, 64, 80);
    box-sizing: border-box;
  }
  
- .filter {
-   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
- }
+ 
  
  .img-svg {
    line-height: 1;
@@ -50,15 +51,25 @@ $mainColor:rgb(68, 64, 80);
    font-size: 15px;
    font-weight: 400;
    color: $mainColor;
-   background-color: rgba(47, 43, 61, 0.08);
    border-radius: 6px;
    cursor: pointer;
    line-height: 22.005px;
    text-decoration-color: $mainColor;
-   margin: 0px 12px;
+   margin: 0px 12px 5px 12px;
    padding: 8px 6px 8px 12px;
+   &:hover {
+    background-color: rgba(47, 43, 61, 0.08);
+    transition: 0.3s;
+  }
  }
- 
+ .cust-bg{
+  background-color: rgba(47, 43, 61, 0.08);
+ }
+ .cust-bg2{
+  padding: 10px;
+  border-radius: 12px;
+  background-color: rgba(47, 43, 61, 0.08);
+ }
  .badge {
    border-radius: 800px;
    color: rgb(255, 255, 255);
@@ -98,6 +109,7 @@ $mainColor:rgb(68, 64, 80);
    padding-left: 10px;
  }
  
+ 
  .menu-data-ico {
    font-size: 12px;
    font-weight: 700;
@@ -126,8 +138,96 @@ $mainColor:rgb(68, 64, 80);
    transition: width 2s;
  }
  
- .sec3 {
-   transition: opacity 0.3s ease-in-out;
+ #mySidenav  {
+  
+  position:  absolute;
+  box-sizing: border-box;
+  transition: 0.3s;
+  width: 70px;
+  overflow: hidden;
+}
+
+#mySidenav:hover {
+ width :260px;
+ z-index: 1;
+}
+
+
+ #about{
+  background-color: #fff;
+ }
+
+ #panel, #panel2, #panel3, #panel4 {
+  display: none; /* Or use display: none; based on your needs */
+} 
+
+.icons{
+  font-size: 20px;
+  margin-right: .5rem;
+}
+ 
+ 
+.hidden{
+  text-overflow:  ellipsis ;
+  white-space: nowrap;
+  overflow: hidden;
+ 
+}
+
+ .bk{
+  margin-left: 42px;
+ }
+
+ .bk2{
+  margin-left: 95px;
+ }
+
+ .bk3{
+  margin-left: 70px;
+ }
+
+ .bk4{
+  margin-left: 60px;
  }
  
+ .content {
  
+  overflow-y: scroll;
+  mask-image: linear-gradient(to top, transparent, rgba(47, 43, 61, 0.08)),
+    linear-gradient(to left, transparent 17px, rgba(47, 43, 61, 0.08));
+  mask-size: 100% 20000px;
+  mask-position: left bottom;
+  -webkit-mask-image: linear-gradient(to top, transparent, black),
+    linear-gradient(to left, transparent 17px, black 17px);
+  -webkit-mask-size: 100% 20000px;
+  -webkit-mask-position: left bottom;
+  transition: mask-position 0.3s, -webkit-mask-position 0.3s;
+}
+
+.content:hover {
+  -webkit-mask-position: left top;
+}
+
+@keyframes background {
+  from {
+    background: pink;
+  }
+  to {
+    background: #c0d6ff;
+  }
+}
+
+ .trna{
+  transition: .3s;
+  background-clip: padding-box;
+  box-shadow: 0 .1875rem .75rem 0 rgba(47, 43, 61, .14);
+  border-color: #e6e6e8;
+  border-radius: 0.375rem;
+ }
+
+
+ @media (max-width: 768px) {
+  .trna {
+      display: none;
+  }
+}
