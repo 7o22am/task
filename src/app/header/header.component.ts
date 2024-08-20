@@ -19,6 +19,6 @@ export class HeaderComponent {
   }
   display(){
     this.menu=!this.menu;
-    alert("sadsa")
+    alert("show nav if u want!")
   }
 }
