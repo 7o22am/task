@@ -8,7 +8,7 @@ import { Component, AfterViewInit, ElementRef, Renderer2, ViewChild, ViewChildre
   styleUrls: ['./nav.component.scss'],
   
 })
-export class NavComponent implements OnInit  {
+export class NavComponent implements OnInit   {
 
   dashbordCollapsed: Boolean = false;
   layoutCollapsed: Boolean = false;
@@ -19,6 +19,7 @@ export class NavComponent implements OnInit  {
   constructor(private renderer: Renderer2) {
   
    }
+ 
   ngOnInit(): void {
     this.panels.forEach((panel) => {
       $(panel.nativeElement).slideUp(0); // Ensures all panels are closed initially
@@ -47,7 +48,6 @@ export class NavComponent implements OnInit  {
 
 
 
-
   isfull() {
     this.fullMode = !this.fullMode;
   }
@@ -72,6 +72,5 @@ export class NavComponent implements OnInit  {
  
     
   }
-
-
+ 
 }
